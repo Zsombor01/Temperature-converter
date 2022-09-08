@@ -1,0 +1,68 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background-image: url('./nice-weather.jpg') ;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 40px;
+    margin: 15rem 38rem;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+h1 {
+    margin: 6rem 0 6rem 0;
+    padding-top: 4rem;
+    text-align: center;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+input {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.from {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    width: 20rem;
+    margin: 0 50%;
+    transform: translate(-50%, -50%); 
+}
+
+button {
+    background-color: rgba(255, 235, 205, 1);
+    box-shadow: 1px 1px 2px 0.1px;
+    margin: 3rem 50%;
+    padding: 7px 20px;
+    border: none;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+}
+
+button:active {
+    background-color: rgba(255, 235, 205, 0.2);
+    box-shadow: 0 0 0 0;
+}
+
+.form2 {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    width: 20rem;
+    margin: 0 50%;
+    margin-top: 2rem;
+    transform: translate(-50%, -50%); 
+}
+
+.result {
+    min-width: 188px;
+    border-bottom: 1px solid black;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature converter</title>
+    <link rel="stylesheet" href="tempconverter.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Temperature Converter</h1>
+        
+            <div class="from">
+                <input id="temperature" class="temperature" type="number" name="temperature" autocomplete="off" placeholder="Temperature" />
+                <input id="measure" class="measure" type="text" name="measuredin" autocomplete="off" placeholder="Measurement" />
+            </div>
+            <div class="form2">
+                <div class="result">
+                    <p id="resulttext"></p>
+                </div>
+                <input id="to" class="to" type="text" name="to" autocomplete="off" placeholder="To" />
+             </div>
+        <button id="convert">Convert</button>
+    </div>
+    
+    <script>
+
+        const temperature = document.getElementById('temperature');
+        const button = document.getElementById('convert');
+        const result = document.getElementById('resulttext');
+        const measure = document.getElementById('measure');
+        const to = document.getElementById('to');
+        const input = document.querySelector('input');
+
+ 
+        /* just the celsius for now */
+            function fun1() {
+                /* Celsius */
+                if (measure.value =="Celsius" || measure.value == "celsius" || measure.value == "C") {
+                    if (to.value == "Fahrenheit" || to.value == "fahrenheit" || to.value == "F") {
+                        result.innerHTML = 9/5 * parseInt(temperature.value) + 32;
+                    } else if (to.value == "Kelvin" || to.value == "kelvin" || to.value == "K") {
+                        result.innerHTML = parseInt(temperature.value) + 273;
+                    } 
+                } 
+                /* Fahrenheit */
+                else if (measure.value =="Fahrenheit" || measure.value == "fahrenheit" || measure.value == "F") {
+                    if (to.value == "Celsius" || to.value == "celsius" || to.value == "C") {
+                        result.innerHTML = 5/9 *(parseInt(temperature.value) - 32);
+                    } else if (to.value == "Kelvin" || to.value == "kelvin" || to.value == "K") {
+                        result.innerHTML = 5/9 * (parseInt(temperature.value) - 32) + 273;
+                    }
+                }
+                /* Kelvin */
+                else if (measure.value =="Kelvin" || measure.value == "kelvin" || measure.value == "K") {
+                    if (to.value == "Celsius" || to.value == "celsius" || to.value == "C") {
+                        result.innerHTML = parseInt(temperature.value) - 273;
+                    } else if (to.value == "Fahrenheit" || to.value == "fahrenheit" || to.value == "F") {
+                        result.innerHTML = 9/5 * (parseInt(temperature.value) - 273) + 32;
+                    } 
+                } else {
+                    result.innerHTML = "U made some mistake!";
+                }
+            }
+
+         button.addEventListener('click', fun1);
+        //  trying to make work the button by an enter
+        input.addEventListener('keyup', e => {
+            e.preventDefault();
+            if (e.keyCode === 13) {
+                alert('Enter is pressed')
+            }
+        });
+
+
+
+    </script>
+
+</body>
+</html>
